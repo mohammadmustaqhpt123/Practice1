@@ -19,6 +19,12 @@ namespace AsianPaint
             this.driver = driver;
         }
 
+
+        /// <summary>
+        /// one arument for textbox name and another one is for test data
+        /// </summary>
+        /// <param name="data"></param>
+        /// <param name="textboxName"></param>
         public void FindACalculatorTextBox(string data, string textboxName)
         {
             Thread.Sleep(3000);
@@ -26,6 +32,11 @@ namespace AsianPaint
             Thread.Sleep(2000);
         }
 
+
+        /// <summary>
+        ///  this is  for cliking all button
+        /// </summary>
+        /// <param name="buttonName"></param>
         public void FindACalculatorButton(string buttonName)
         {
             Thread.Sleep(2000);
@@ -54,11 +65,10 @@ namespace AsianPaint
 
         public string GetContractorName(int index)
         {
-            return driver.FindElement(By.XPath("(//div[@class='cl--infoCard--desc']/h3)[" + index + "]")).Text;
+            return driver.FindElement(By.XPath("(//div[@class='cl--infoCard--desc']/p)[" + index + "]")).Text;
         }
 
-        
-
+     
 
 
 

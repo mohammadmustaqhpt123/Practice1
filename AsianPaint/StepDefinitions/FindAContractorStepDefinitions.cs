@@ -6,7 +6,7 @@ using TechTalk.SpecFlow;
 namespace AsianPaint
 {
     [Binding]
-    public class FindAContractorStepDefinitions : UtilityClass
+    public class FindAContractorStepDefinitions : ApplicationHooks
     {
         public FindAContractorPage fc;
         public HomePage hp;
@@ -82,7 +82,9 @@ namespace AsianPaint
 
 
 
-// No of Contractor
+/// <summary>
+/// No of Contractor
+/// </summary>
         [Then(@"Verify No of Contractor Profile")]
         public void ThenVerifyNoOfContractorProfile()
         {
@@ -93,13 +95,16 @@ namespace AsianPaint
             Console.WriteLine(actual);
         }
 
- // Verify Name of Contractor
+ /// <summary>
+ /// Verify Name of Contractor
+ /// </summary>
         [Then(@"Verify Contractor name")]
         public void ThenVerifyContractorName()
         {
             ObjectMethod();
+            Thread.Sleep(10000);
             string actual = fc.GetContractorName(1);
-            string  expected = "Shivakumar K";
+            string  expected = "Hospet";
             Assert.That(actual, Is.EqualTo(expected));
             Console.WriteLine(actual);
         }

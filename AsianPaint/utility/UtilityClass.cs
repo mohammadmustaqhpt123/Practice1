@@ -65,26 +65,38 @@ namespace AsianPaint
             return driver.Title;
         }
 
-        public void CaptureScreenshot()
+
+        /// <summary>
+        /// Here we are taking screenshot and storing in sreenshot folder
+        /// </summary>
+        /// <param name="screenName">this for file name</param>
+        public void CaptureScreenshot(string screenName)
         {
 
             ITakesScreenshot screenshotDriver = driver as ITakesScreenshot;
 
             Screenshot screenshot = screenshotDriver.GetScreenshot();
 
-            screenshot.SaveAsFile(filePath + "/screenshot.png", ScreenshotImageFormat.Png);
+            screenshot.SaveAsFile(filePath + "/"+ screenName  + ".png", ScreenshotImageFormat.Png);
 
 
         }
 
-
+        /// <summary>
+        /// mouse hovering action
+        /// </summary>
+        /// <param name="element">if we pass element and it will hover on this element </param>
         public void Hover(IWebElement element)
         {
             action = new Actions(driver);
             action.MoveToElement(element).Perform();
         }
 
-
+        /// <summary>
+        ///  This method for convert table to dictionary
+        /// </summary>
+        /// <param name="table"></param>
+        /// <returns>dictionary key=string and value = string</returns>
         public Dictionary<string, string> ToDictionary(Table table)
         {
             var dictionary = new Dictionary<string, string>();
@@ -97,6 +109,9 @@ namespace AsianPaint
             return dictionary;
         }
 
+        /// <summary>
+        /// notification disable
+        /// </summary>
         public void DisableNotification()
         {
             notification = new ChromeOptions();
@@ -105,7 +120,11 @@ namespace AsianPaint
         }
 
 
-
+        /// <summary>
+        /// creating dictionary object and storing all the page title
+        /// </summary>
+        /// <param name="title">passing page name as title</param>
+        /// <returns>it will return page title</returns>
         public string ExpectedTitle(string title)
         {
             Dictionary<string, string> titles = new Dictionary<string, string>();
@@ -127,13 +146,16 @@ namespace AsianPaint
             titles.Add("Floor Guard", floorGuard);
             titles.Add("View All", viewAll);
             titles.Add("Find a Contractor", findAContractor);
+            titles.Add("Colours & Textures", coloursAndTextures);
             
             return titles[title];
         }
 
 
-
-        
+        public void ClickHomePageButton(string buttonName)
+        {
+            driver.FindElement(By.XPath("//button[text()='" + buttonName + "']")).Click();
+        }
 
 
 

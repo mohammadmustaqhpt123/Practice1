@@ -4,7 +4,7 @@
     <TargetFramework>net6.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
-    <StartupObject>AsianPaint.Class1</StartupObject>
+    <StartupObject></StartupObject>
   </PropertyGroup>
 
   <ItemGroup>
@@ -30,6 +30,7 @@
   <ItemGroup>
     <Folder Include="Drivers\" />
     <Folder Include="report\" />
+    <Folder Include="screenshot\" />
   </ItemGroup>
 
 </Project>

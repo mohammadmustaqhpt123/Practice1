@@ -27,7 +27,13 @@ namespace AsianPaint
                 
                 return;
             }
-           
+            if (elementName == "Kid's World")
+            {
+                driver.FindElement(By.XPath("//ul[@id='Interior']//li[3]//a[1]")).Click();
+                return;
+                
+            }
+
             driver.FindElement(By.XPath("(//a[normalize-space()='" + elementName + "'])[1]")).Click();
         }
 
@@ -42,7 +48,10 @@ namespace AsianPaint
         }
 
 
-
+       public void ClickHomePageButton(string buttonName)
+        {
+            driver.FindElement(By.XPath("//button[text()='" + buttonName + "']")).Click();
+        }
 
 
 

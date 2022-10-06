@@ -1,4 +1,5 @@
 ﻿
+using AventStack.ExtentReports.Reporter;
 using OpenQA.Selenium.Chrome;
 using System;
 using System.Threading;
@@ -8,7 +9,6 @@ namespace AsianPaint
 {
     public class ApplicationHooks : UtilityClass
     {
-
         
 
 
